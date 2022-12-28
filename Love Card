@@ -1,1 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Docs</title>
+    <link rel="stylesheet" href="stylesheet.css">
+  </head>
+  <body>
+    <section>
+	  <div class="card">
+        <span class="front"><p>&#x1f49f</p></span>
+        <main class="text">
+          <h1>Love Card&#x2764</h1>
+          <h3>*Name*</h3>
+          <p>Heading<br>
+             1)Sub-Heading 1
+             2)Sub-Heading 2
+             3)Sub-Heading 3
+             4)Sub-Heading 4<br>
+             Line 1<br> Line 2. 
+          </p>
+          <div class="endtext">
+          <p>From:&nbspName</p></div>
+        </main>
+      </div>
+  </section>
+  </body>
+</html>
 
+
+
+
+
+**CSS**
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: linear-gradient(#cd88f4,#641d67,#254749);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height:100vh;
+}
+section{
+  width: 460px;
+  height:90vh;
+  border: 6px solid hotpink;
+  position: relative;
+  border-bottom-left-radius:50px;
+  border-top-right-radius: 50px;
+  animation-name:example;
+  animation-duration: 4s;
+  background: rgb(211, 48, 127);
+}
+@keyframes example {
+  from {background-color:  rgb(211, 48, 127);}
+  to {background-color: rgb(95, 21, 85);}
+}
+.card{
+  position: absolute;
+  width: 250px;
+  height:250px;
+  background: #e75bff;
+  left: 100px;
+  top: 100px;
+  transition: all 0.35s ease-in-out;
+  border-radius: 50%;
+}
+.front{
+  position:absolute;
+  top:0;
+  width:250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 4px solid crimson;
+  background: none;
+  transform-origin: 95% 40%;
+  z-index: 2;
+  transition: all 0.35s ease-in-out;
+}
+.front::after{
+  content: '';
+  width: 8px;
+  height:8px;
+  position: absolute;
+  border-radius:50%;
+  top: 40%;
+  left: 95%;
+  margin: -4px 0 0 -4px;
+  background: #fff;
+  box-shadow: 0 0 1px rgba(225,225,225,0.4);
+}
+.card:hover .front{
+    transform: rotate(-180deg);
+}
+.front p{
+  font-size: 10rem;
+  left: 40px;
+  text-align: center;
+}
+.text{
+  position: relative;
+  text-align: center;
+  filter: blur(3px);
+  transition: all 0.5s ease-in-out;
+  z-index:1;
+}
+.card:hover .text{
+  filter:blur(0);
+
+}
+.text h1{
+  font-size: 25px;
+  color:#fff;
+  font-family: cursive;
+  font-style: oblique;
+  font-weight:bolder;
+  margin: 25px 0;
+}
+.text h3{
+  color: #fff;
+  background:crimson;
+  font-family: monospace;
+  font-weight:lighter;
+  font-size:18px;
+}
+.text p{
+  font-family:'Times New Roman';
+  font-style:italic;
+  padding:10px 0;
+  font-size:14px;
+  color:#fff;
+  
+}
+.endtext p{
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   color: #080008;
+   
+}
+@media screen and(max-width:500px){
+  section{
+    width:100%;
+    max-width:450px;
+  }
+  .card{
+    width:170px;
+    height:170px;
+  }
+  .front{
+    width:170px;
+    height:170px;
+  }
+  .front p{
+    font-size: 6rem;
+  }
+  .text{
+    width:150px;
+    height:150px;
+  }
+  .text p{
+    padding:7px;
+    font-size: 7px;
+
+  }
+}
